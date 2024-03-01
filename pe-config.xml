@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <envs>
+        <env name="VM_COMMON_DIR" value="%ProgramData%\_VM"/>
+        <env name="TOOL_LIST_DIR" value="%UserProfile%\Desktop\Tools"/>
+        <env name="RAW_TOOLS_DIR" value="%SystemDrive%\Tools"/>
+    </envs>
+    <packages>
+        <package name="010editor.vm"/>
+        <package name="7zip-15-05.vm"/>
+        <package name="apimonitor.vm"/>
+        <package name="bytecodeviewer.vm"/>
+        <package name="capa.vm"/>
+        <package name="cmder.vm"/>
+        <package name="cyberchef.vm"/>
+        <package name="de4dot-cex.vm"/>
+        <package name="dependencywalker.vm"/>
+        <package name="die.vm"/>
+        <package name="dll-to-exe.vm"/>
+        <package name="dnlib.vm"/>
+        <package name="dnspyex.vm"/>
+        <package name="dotdumper.vm"/>
+        <package name="dotnet3.5"/> <!-- To run old .NET binaries -->
+        <package name="explorersuite.vm"/>
+        <package name="extreme_dumper.vm"/>
+        <package name="fakenet-ng.vm"/>
+        <package name="file.vm"/>
+        <package name="floss.vm"/>
+        <package name="ghidra.vm"/>
+        <package name="goresym.vm"/>
+        <package name="hashmyfiles.vm"/>
+        <package name="hollowshunter.vm"/>
+        <package name="hxd.vm"/>
+        <package name="ida.plugin.capa.vm"/>
+        <package name="idafree.vm"/>
+        <package name="idr.vm"/>
+        <package name="ilspy.vm"/>
+        <package name="innoextract.vm"/>
+        <package name="innounp.vm"/>
+        <package name="isd.vm"/>
+        <package name="libraries.python3.vm"/>
+        <package name="microsoft-windows-terminal.vm"/>
+        <package name="nasm.vm"/>
+        <package name="net-reactor-slayer.vm"/>
+        <package name="pebear.vm"/>
+        <package name="pesieve.vm"/>
+        <package name="pestudio.vm"/>
+        <package name="pkg-unpacker.vm"/>
+        <package name="processdump.vm"/>
+        <package name="reg_export.vm"/>
+        <package name="regshot.vm"/>
+        <package name="rundotnetdll.vm"/>
+        <package name="scdbg.vm"/>
+        <package name="sclauncher.vm"/>
+        <package name="sclauncher64.vm"/>
+        <package name="sfextract.vm"/>
+        <package name="sysinternals.vm"/>
+        <package name="systeminformer.vm"/>
+        <package name="uniextract2.vm"/>
+        <package name="upx.vm"/>
+        <package name="vcbuildtools.vm"/>
+        <package name="vcredist-all"/>
+        <package name="windbg.vm"/>
+        <package name="x64dbg.ollydumpex.vm"/>
+        <package name="x64dbg.scyllahide.vm"/>
+        <package name="x64dbg.vm"/>
+        <package name="x64dbgpy.vm"/>
+        <package name="yara.vm"/>
+    </packages>
+    <apps>
+        <!--
+        INFO:
+        Removes installed AppX packages. Try:
+        $packages = Get-AppxPackage
+        $packages.Name
+        FORMAT:
+        <app name="APP_NAME"/>
+        -->
+    </apps>
+    <services>
+        <!--
+        INFO:
+        Sets Services to "Manual" startup type. Try:
+        $services = Get-WmiObject -Query "SELECT * FROM Win32_Service WHERE StartMode='Auto'" | Get-Service
+        $services.Name
+        FORMAT:
+        <service name="SERVICE_NAME"/>
+        -->
+    </services>
+    <tasks>
+        <!--
+        INFO:
+        Disables Scheduled Tasks. Try:
+        $tasks = Get-ScheduledTask
+        $tasks.TaskName
+        FORMAT:
+        <task name="DESCRIPTIVE_NAME" value="TASK_NAME"/>
+        -->
+    </tasks>
+    <path-items>
+        <!--
+        INFO:
+        Removes files and folders from the system
+        FORMAT:
+        <path-item name="DESCRIPTIVE_NAME" type="dir/file" path="DIR_PATH/FILE_PATH"/>
+        -->
+    </path-items>
+    <registry-items>
+        <!--
+        INFO:
+        Makes custom edits to the registry
+        FORMAT:
+        <registry-item name="DESCRIPTIVE_NAME" path="REG_PATH" value="REG_VALUE" type="TYPE" data="NEW_DATA"/>
+        -->
+        <registry-item name="Show full directory path in Explorer title bar" path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" value="FullPath" type="DWord" data="1"/>
+        <registry-item name="Show known file extensions" path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" value="HideFileExt" type="DWord" data="0"/>
+        <registry-item name="Show hidden files" path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" value="Hidden" type="DWord" data="1"/>
+        <registry-item name="Disable SmartScreen" path="HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" value="EnableSmartScreen" type="DWord" data="0" />
+        <registry-item name="Disable Microsoft Edge Phishing Filter" path="HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter" value="EnabledV9" type="DWord" data="0" />
+        <registry-item name="Disable Windows Firewall (Standard Profile)" path="HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile" value="EnableFirewall" type="DWord" data="0" />
+        <registry-item name="Add ZoomIt to Windows Start" path="HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\run" value="ZoomIt" type="String" data="C:\Tools\sysinternals\ZoomIt64.exe" />
+        <registry-item name="Don't display ZoomIt GUI on login" path="HKCU:\Software\Sysinternals\ZoomIt" value="OptionsShown" type="DWord" data="1" />
+        <registry-item name="Hide the .lnk extension" path="HKLM:\SOFTWARE\Classes\lnkfile" value="NeverShowExt" type="String" data=" "/>
+        <!-- Set dark mode
+        <registry-item name="Set Dark Mode on System" path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" value="SystemUsesLightTheme" type="DWord" data="0"/>
+        <registry-item name="Set Dark Mode on Apps" path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" value="AppsUseLightTheme" type="DWord" data="0"/>
+        -->
+    </registry-items>
+    <custom-items>
+        <!--
+        INFO:
+        Performs custom commands
+        FORMAT:
+        <custom-item name="DESCRIPTIVE_NAME"> <cmd value="PS_COMMAND"/> ... </custom-item>
+        -->
+        <custom-item name="Disabling Windows Firewall">
+            <cmd value="Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False" />
+        </custom-item>
+    </custom-items>
+</config>
