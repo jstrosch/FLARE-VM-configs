@@ -9,6 +9,7 @@
         <package name="010editor.vm"/>
         <package name="7zip-15-05.vm"/>
         <package name="cyberchef.vm"/>
+        <package name="cmder.vm"/>
         <package name="die.vm"/>
         <package name="file.vm"/>
         <package name="hxd.vm"/>
