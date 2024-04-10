@@ -19,6 +19,7 @@
         <package name="vcbuildtools.vm"/>
         <package name="vcredist-all"/>
         <package name="windbg.vm"/>
+        <package name="vscode.vm"/>
     </packages>
     <apps>
         <!--
